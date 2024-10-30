@@ -17,6 +17,12 @@ and from the browser
 http://localhost:8080/q/swagger-ui/
 ```
 
+and to check/configure the app properties
+
+```
+http://localhost:8080/q/dev
+```
+
 # quarkus-rest-number
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
