@@ -13,6 +13,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import java.time.Instant;
 
+import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.jboss.logging.Logger;
 
 @Path("/api/books")
@@ -23,6 +24,7 @@ public class BookResource {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED) // takes form data
+    @Operation(summary = "Creates a new book") // for documentation
     public Response createBook(
             @FormParam("title") String title, 
             @FormParam("author") String author, 
@@ -30,7 +32,7 @@ public class BookResource {
             @FormParam("genre") String genre) {
 
         Book book = new Book();
-        book.isbn13 = "we get it later";
+        book.isbn13 = "13-we get it later";
         book.title = title;
         book.author = author;
         book.yearOfPublication = yearOfPublication;

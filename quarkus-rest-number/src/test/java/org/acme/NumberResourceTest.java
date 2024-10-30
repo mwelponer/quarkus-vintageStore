@@ -14,11 +14,12 @@ class NumberResourceTest {
     @Test
     void test_NumberResource() {
         given()
-          .when().get("/api/numbers")
-          .then()
-             .statusCode(200)
-             .body("ISBN_13", startsWith("13-"))
-             .body("ISBN_10", startsWith("10-"))
-             .body(not(hasKey("generationDate")));
+        .when()
+            .get("/api/numbers")
+        .then()
+            .statusCode(200)
+            .body("ISBN_13", startsWith("13-"))
+            .body("ISBN_10", startsWith("10-"))
+            .body(not(hasKey("generationDate")));
     }
 }
