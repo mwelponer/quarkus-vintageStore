@@ -11,7 +11,7 @@ import static org.hamcrest.CoreMatchers.startsWith;
 class BookResourceTest {
 
     @Test
-    void testHelloEndpoint() {
+    void test_createBook() {
         given()
             .formParam("title", "t")
             .formParam("author", "a")
