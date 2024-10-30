@@ -13,7 +13,7 @@ curl http://localhost:8080/q/openapi -H "Accept: application/json"
 
 and from the browser 
 
-```bash
+```
 http://localhost:8080/q/swagger-ui/
 ```
 
@@ -22,6 +22,19 @@ and to check/configure the app properties
 ```
 http://localhost:8080/q/dev
 ```
+
+to pass POST data using curl 
+
+```bash
+curl -X POST http://localhost:8080/api/books -d "title=mytit&author=myauth&year=2024&genre=IT" -v
+```
+
+
+
+
+
+
+
 
 # quarkus-rest-number
 
