@@ -4,6 +4,19 @@ list open TCP and UDP ports using
 lsof -i -P -n |grep LIST
 ```
 
+accessing documentation of the microservices
+
+```bash
+curl http://localhost:8080/q/openapi
+curl http://localhost:8080/q/openapi -H "Accept: application/json"
+```
+
+and from the browser 
+
+```bash
+http://localhost:8080/q/swagger-ui/
+```
+
 # quarkus-rest-number
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.

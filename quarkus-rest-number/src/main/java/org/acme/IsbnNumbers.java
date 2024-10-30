@@ -2,13 +2,18 @@ package org.acme;
 
 import java.time.Instant;
 
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+
 import jakarta.json.bind.annotation.JsonbProperty;
 import jakarta.json.bind.annotation.JsonbTransient;
 
+@Schema(description = "Several ISBN numbers for books") // for the documentation
 public class IsbnNumbers {
     
+    @Schema(required=true) // for documentation
     @JsonbProperty("ISBN_13") // override the property name in the json
     public String isbn13;
+    @Schema(required=true) // for documentation
     @JsonbProperty("ISBN_10")
     public String isbn10;
     @JsonbTransient // does not include the property in the json
