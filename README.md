@@ -26,7 +26,7 @@ http://localhost:8080/q/dev
 to pass POST data using curl 
 
 ```bash
-curl -X POST http://localhost:8080/api/books -d "title=mytit&author=myauth&year=2024&genre=IT" -v
+curl -X POST http://localhost:8702/api/books -d "title=mytit&author=myauth&year=2024&genre=IT" -v
 ```
 
 
