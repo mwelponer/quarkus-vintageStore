@@ -1,3 +1,16 @@
+launch servers on two different prompts
+
+```bash
+cd quarkus-rest-number
+./mvnw quarkus:dev -f pom.xml
+```
+
+```bash
+cd quarkus-rest-book
+./mvnw quarkus:dev -f pom.xml
+```
+
+
 list open TCP and UDP ports using
 
 ```bash
