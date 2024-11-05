@@ -1,7 +1,5 @@
 package org.acme;
 
-
-
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.FormParam;
@@ -22,7 +20,10 @@ public class BookResource {
     @RestClient NumberProxy proxy;
     @Inject Logger logger;
 
-    @Operation(summary = "Creates a new book") // for documentation
+    @Operation(
+        summary = "Creates a new book",
+        description = "Creates a book with an ISBN number"    
+    ) // for documentation
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED) // takes form data
@@ -30,11 +31,10 @@ public class BookResource {
             @FormParam("title") String title, 
             @FormParam("author") String author, 
             @FormParam("year") int yearOfPublication, 
-            @FormParam("genre") String genre) 
-    {
+            @FormParam("genre") String genre) {
 
         Book book = new Book();
-        book.isbn13 = proxy.generateIsbnNumbers().isbn;
+        book.isbn13 = proxy.generateIsbnNumbers().isbn; //"13-we get it later";
         book.title = title;
         book.author = author;
         book.yearOfPublication = yearOfPublication;

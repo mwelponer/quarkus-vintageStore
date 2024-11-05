@@ -7,7 +7,7 @@ import jakarta.ws.rs.core.MediaType;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 
-@RegisterRestClient
+@RegisterRestClient(configKey = "number.proxy")
 @Path("/api/numbers")
 public interface NumberProxy {
     @GET

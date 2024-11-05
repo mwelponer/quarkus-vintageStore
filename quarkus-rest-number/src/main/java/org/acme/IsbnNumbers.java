@@ -13,9 +13,11 @@ public class IsbnNumbers {
     @Schema(required=true) // for documentation
     @JsonbProperty("ISBN_13") // override the property name in the json
     public String isbn13;
+
     @Schema(required=true) // for documentation
     @JsonbProperty("ISBN_10")
     public String isbn10;
+
     @JsonbTransient // does not include the property in the json
     public Instant generationDate;
 
@@ -33,6 +35,6 @@ public class IsbnNumbers {
 
     @Override
     public String toString() {
-        return "IsbnNumbers [isbn13=" + isbn13 + ", isbn10=" + isbn10 + ", generationDate=" + generationDate + "]";
+        return "IsbnNumbers {ISBN_13=" + isbn13 + ", ISBN_10=" + isbn10 + ", DATE=" + generationDate + "}";
     }    
 }

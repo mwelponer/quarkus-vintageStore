@@ -9,19 +9,22 @@ import jakarta.json.bind.annotation.JsonbProperty;
 @Schema(description = "a book") // for documentation
 public class Book {
 
-    @JsonbProperty("ISBN_13")
     @Schema(required = true) // for documentation
+    @JsonbProperty("ISBN_13")
     public String isbn13;
+
     @Schema(required = true) // for documentation
     public String title;
     public String author;
+
     @JsonbProperty("year_of_publication")
     public int yearOfPublication;
+
     public String genre;
 
+    @Schema(implementation = String.class, format = "date") // for documentation
     @JsonbDateFormat("yyy/MM/dd") // format the date to a specific date format
     @JsonbProperty("creation_date")
-    @Schema(implementation = String.class, format = "date") // for documentation
     public Instant creationDate;
 
     @Override
